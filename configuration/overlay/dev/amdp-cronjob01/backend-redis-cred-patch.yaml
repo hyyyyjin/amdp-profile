@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: <%=deploy_type%>
+metadata:
+  name: app
+spec:
+  template:
+    spec:
+      containers:
+      - name: app
+        env:
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: <%=redis_name%>-secret
+              key: password

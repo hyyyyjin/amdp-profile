@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: app
+spec:
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: app
+            image: app
+            volumeMounts:
+            - mountPath: /config
+              name: app-config-volume
+          volumes:
+          - name: app-config-volume
+            configMap:
+              name: app-config

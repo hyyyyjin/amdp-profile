@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+spec:
+  template:
+    spec:
+      containers:
+      - name: app
+        env:
+        - name: MARIADB_USER
+          valueFrom:
+            secretKeyRef:
+              name: -secret
+              key: user
+        - name: MARIADB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: -secret
+              key: password
