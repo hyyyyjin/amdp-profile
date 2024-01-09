@@ -1,0 +1,6 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: tekton-spring-gradle
+  microservice-name: tekton-spring-gradle

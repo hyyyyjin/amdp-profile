@@ -1,0 +1,35 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+commonLabels:
+  amdp.io/app: tekton-spring-gradle
+  amdp.io/profile: hj-pjt-1.dev
+configMapGenerator:
+- behavior: merge
+  files:
+  - application-custom.yaml
+  name: app-config
+images:
+- name: app
+  newName: amdp-registry.skamdp.org/hj-pjt/hj-pjt-1/dev/tekton-spring-gradle
+  newTag: latest
+kind: Kustomization
+namePrefix: tekton-spring-gradle-
+nameSuffix: -dev
+patchesJson6902:
+- path: service-patch.yaml
+  target:
+    kind: Service
+    name: app
+    version: v1
+patchesStrategicMerge:
+- container-patch.yaml
+- imagepolicy-patch.yaml
+- pod-lifecycle-patch.yaml
+- probe-patch.yaml
+- spec-patch.yaml
+- replicas-patch.yaml
+- nodegroup-patch.yaml
+- active-profiles-patch.yaml
+- pod-template-annotation-patch.yaml
+- istio-injection-patch.yaml
+resources:
+- ../common/deployment
