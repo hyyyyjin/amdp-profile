@@ -27,7 +27,6 @@ patchesStrategicMerge:
 - probe-patch.yaml
 - spec-patch.yaml
 - replicas-patch.yaml
-- nodegroup-patch.yaml
 - active-profiles-patch.yaml
 - pod-template-annotation-patch.yaml
 - istio-injection-patch.yaml
