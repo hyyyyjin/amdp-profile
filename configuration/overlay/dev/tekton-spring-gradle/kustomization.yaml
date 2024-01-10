@@ -8,9 +8,8 @@ configMapGenerator:
   - application-custom.yaml
   name: app-config
 images:
-- !!skcc.generate.model.kustomize.ImagePatchModel
-  name: app
-  newName: amdp-registry.skamdp.org/hj-pjt/hj-pjt-1/dev/tekton-spring-gradle
+- name: app
+  newName: amdp-registry.skamdp.org/hj-pjt-1/dev/tekton-spring-gradle
   newTag: latest
 kind: Kustomization
 namePrefix: tekton-spring-gradle-
