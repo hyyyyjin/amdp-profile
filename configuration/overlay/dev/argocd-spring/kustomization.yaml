@@ -8,9 +8,10 @@ configMapGenerator:
   - application-custom.yaml
   name: app-config
 images:
-- name: app
-  newName: amdp-registry.skamdp.org/hj-pjt-1/dev/argocd-spring
-  newTag: latest
+- !!skcc.generate.model.kustomize.ImagePatchModel
+  name: app
+  newName: amdp-registry.skamdp.org/hj-pjt-1/dev/tekton-spring-gradle
+  newTag: 0.1.0
 kind: Kustomization
 namePrefix: argocd-spring-
 nameSuffix: -dev
