@@ -1,0 +1,10 @@
+!!skcc.generate.model.hash.MicroserviceTemplateHashPatchModel
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+spec:
+  template:
+    metadata:
+      annotations:
+        amdp.io/hash: hOFVLNErMv

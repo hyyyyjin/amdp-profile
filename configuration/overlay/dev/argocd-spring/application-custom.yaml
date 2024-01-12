@@ -1,0 +1,6 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: argocd-spring
+  microservice-name: argocd-spring
