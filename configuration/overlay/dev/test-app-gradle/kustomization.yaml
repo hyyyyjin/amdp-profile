@@ -8,7 +8,8 @@ configMapGenerator:
   - application-custom.yaml
   name: app-config
 images:
-- name: app
+- !!skcc.generate.model.kustomize.ImagePatchModel
+  name: app
   newName: amdp-registry.skamdp.org/hj-pjt-1/dev/test-app-gradle
   newTag: latest
 kind: Kustomization
