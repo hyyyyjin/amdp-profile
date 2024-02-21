@@ -1,0 +1,6 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: test-app-gradle
+  microservice-name: test-app-gradle

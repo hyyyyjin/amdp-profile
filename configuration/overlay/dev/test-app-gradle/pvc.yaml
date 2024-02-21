@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: <%=pvc_name%>
+spec:
+  accessModes:
+    - <%=pvc_access_mode%>
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: <%=pvc_request_size%>
+  storageClassName: <%=pvc_storage_class%>
