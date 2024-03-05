@@ -1,0 +1,14 @@
+apiVersion: <%=api_version%>
+kind: StatefulSet
+metadata:
+  name: app
+spec:
+  serviceName: "headless"
+  template:
+    spec:
+      containers:
+      - name: app
+        volumeMounts:
+          - mountPath: /config
+            name: app-config-volume
+            readOnly: true      

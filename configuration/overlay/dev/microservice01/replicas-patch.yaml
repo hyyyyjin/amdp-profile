@@ -1,0 +1,4 @@
+apiVersion: <%=api_version%>
+kind: <%=deploy_type%>
+metadata:
+  name: app

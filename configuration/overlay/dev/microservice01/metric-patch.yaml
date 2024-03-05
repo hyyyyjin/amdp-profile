@@ -1,0 +1,18 @@
+apiVersion: <%=api_version%>
+kind: <%=deploy_type%>
+metadata:
+  name: app
+spec:
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/path: '<%=prometheus_path%>'
+        prometheus.io/port: '<%=prometheus_port%>'
+        # prometheus.io/path: '/actuator/prometheus'
+        # prometheus.io/port: '8091'
+    spec:
+      containers:
+        - name: app
+          ports:
+          - containerPort: <%=prometheus_port%>

@@ -1,0 +1,11 @@
+apiVersion: <%=api_version%>
+kind: <%=deploy_type%>
+metadata:
+  name: app
+spec:
+  template:
+    spec:
+      containers:
+      - name: app
+        ports:
+        - containerPort: 8080

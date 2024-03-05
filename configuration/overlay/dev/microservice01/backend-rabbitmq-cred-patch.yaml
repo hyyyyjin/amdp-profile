@@ -1,0 +1,20 @@
+apiVersion: <%=api_version%>
+kind: <%=deploy_type%>
+metadata:
+  name: app
+spec:
+  template:
+    spec:
+      containers:
+      - name: app
+        env:
+        - name: RABBITMQ_USER
+          valueFrom:
+            secretKeyRef:
+              name: <%=rabbitmq_name%>-secret
+              key: user
+        - name: RABBITMQ_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: <%=rabbitmq_name%>-secret
+              key: password

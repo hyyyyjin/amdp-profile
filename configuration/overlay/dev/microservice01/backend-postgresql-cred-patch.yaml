@@ -1,0 +1,20 @@
+apiVersion: <%=api_version%>
+kind: <%=deploy_type%>
+metadata:
+  name: app
+spec:
+  template:
+    spec:
+      containers:
+      - name: app
+        env:
+        - name: POSTGRESQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: <%=postgresql_name%>-secret
+              key: user
+        - name: POSTGRESQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: <%=postgresql_name%>-secret
+              key: password
