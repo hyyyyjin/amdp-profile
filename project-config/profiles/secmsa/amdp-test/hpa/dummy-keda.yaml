@@ -2,6 +2,6 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: null-secmsa-keda-dummy
+  name: hyunjin-test-secmsa-keda-dummy
   labels:
-    amdp.io/keda: null.secmsa
+    amdp.io/keda: hyunjin-test.secmsa
