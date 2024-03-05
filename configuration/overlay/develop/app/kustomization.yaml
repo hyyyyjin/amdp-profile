@@ -11,7 +11,7 @@ images:
 - !!skcc.generate.model.kustomize.ImagePatchModel
   name: app
   newName: 058264105417.dkr.ecr.ap-northeast-2.amazonaws.com/amdp/hyunjin-test/app
-  newTag: latest
+  newTag: 0.1.1
 kind: Kustomization
 namePrefix: app-
 nameSuffix: -develop
