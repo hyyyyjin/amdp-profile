@@ -8,8 +8,9 @@ configMapGenerator:
   - application-custom.yaml
   name: app-config
 images:
-- name: app
-  newName: 058264105417.dkr.ecr.ap-northeast-2.amazonaws.com/hyunjin-test/develop/app
+- !!skcc.generate.model.kustomize.ImagePatchModel
+  name: app
+  newName: 058264105417.dkr.ecr.ap-northeast-2.amazonaws.com/amdp/hyunjin-test/app
   newTag: latest
 kind: Kustomization
 namePrefix: app-
