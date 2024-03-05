@@ -1,0 +1,34 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+commonLabels:
+  amdp.io/app: backend
+  amdp.io/profile: hyunjin-test.stock
+configMapGenerator:
+- behavior: merge
+  files:
+  - application-custom.yaml
+  name: app-config
+images:
+- name: app
+  newName: 058264105417.dkr.ecr.ap-northeast-2.amazonaws.com/hyunjin-test/stock/backend
+  newTag: latest
+kind: Kustomization
+namePrefix: backend-
+nameSuffix: -stock
+patchesJson6902:
+- path: service-patch.yaml
+  target:
+    kind: Service
+    name: app
+    version: v1
+patchesStrategicMerge:
+- container-patch.yaml
+- imagepolicy-patch.yaml
+- pod-lifecycle-patch.yaml
+- probe-patch.yaml
+- spec-patch.yaml
+- replicas-patch.yaml
+- active-profiles-patch.yaml
+- pod-template-annotation-patch.yaml
+- istio-injection-patch.yaml
+resources:
+- ../common/deployment

@@ -1,0 +1,10 @@
+!!skcc.generate.model.traffic.IstioSidecarInjectPatchModel
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+spec:
+  template:
+    metadata:
+      labels:
+        sidecar.istio.io/inject: 'false'
