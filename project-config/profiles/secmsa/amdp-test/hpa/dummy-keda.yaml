@@ -1,0 +1,7 @@
+!!skcc.generate.model.keda.DummyConfigMapModel
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hyunjin-test-secmsa-keda-dummy
+  labels:
+    amdp.io/keda: hyunjin-test.secmsa

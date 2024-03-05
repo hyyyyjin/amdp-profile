@@ -1,0 +1,18 @@
+!!skcc.generate.model.keda.ScaledObjectDefaultModel
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  labels:
+    scaledobject.keda.sh/name: secmsa-backend-hpa
+  name: secmsa-backend-hpa
+spec:
+  minReplicaCount: 1
+  maxReplicaCount: 5
+  triggers:
+  - !!skcc.generate.model.keda.TriggerModel
+    metadata:
+      type: Utilization
+      value: '20'
+    type: memory
+  scaleTargetRef:
+    name: secmsa-backend-app-secmsa
