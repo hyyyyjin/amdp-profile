@@ -8,9 +8,10 @@ configMapGenerator:
   - application-custom.yaml
   name: app-config
 images:
-- name: app
+- !!skcc.generate.model.kustomize.ImagePatchModel
+  name: app
   newName: amdp-registry.skamdp.org/secmsa/secmsa/secmsa-backend
-  newTag: latest
+  newTag: 0.1.0
 kind: Kustomization
 namePrefix: secmsa-backend-
 nameSuffix: -secmsa
