@@ -1,0 +1,21 @@
+!!skcc.generate.model.service.MicroserviceServicePatchModel
+apiVersion: v1
+kind: Service
+metadata:
+  name: secmsa-backend
+  namespace: amdp-test
+  labels:
+    amdp.io/app: secmsa-backend
+    amdp.io/profile: hyunjin-test.secmsa
+spec:
+  sessionAffinity: None
+  selector:
+    amdp.io/app: secmsa-backend
+    amdp.io/profile: hyunjin-test.secmsa
+  ports:
+  - !!skcc.generate.model.service.ServicePortModel
+    name: web
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  type: ClusterIP
