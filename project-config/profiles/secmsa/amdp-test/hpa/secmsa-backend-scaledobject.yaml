@@ -7,7 +7,7 @@ metadata:
   name: secmsa-backend-hpa
 spec:
   minReplicaCount: 1
-  maxReplicaCount: 5
+  maxReplicaCount: 2
   triggers:
   - !!skcc.generate.model.keda.TriggerModel
     metadata:
