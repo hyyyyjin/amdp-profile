@@ -1,0 +1,21 @@
+!!skcc.generate.model.service.MicroserviceServicePatchModel
+apiVersion: v1
+kind: Service
+metadata:
+  name: amdp-studio-manager
+  namespace: hj-rde
+  labels:
+    amdp.io/app: amdp-studio-manager
+    amdp.io/profile: hj-pjt-1.dev
+spec:
+  sessionAffinity: None
+  selector:
+    amdp.io/app: amdp-studio-manager
+    amdp.io/profile: hj-pjt-1.dev
+  ports:
+  - !!skcc.generate.model.service.ServicePortModel
+    name: web
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  type: ClusterIP

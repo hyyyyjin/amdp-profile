@@ -9,7 +9,7 @@ configMapGenerator:
   name: app-config
 images:
 - name: app
-  newName: amdp-registry.skamdp.org/hj-pjt-1/dev/amdp-studio-manager
+  newName: amdp-registry.skamdp.org/am-studio/manager
   newTag: latest
 kind: Kustomization
 namePrefix: amdp-studio-manager-
