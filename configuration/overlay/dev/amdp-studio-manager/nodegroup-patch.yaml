@@ -1,0 +1,17 @@
+!!skcc.generate.model.nodegrouppatch.NodeGroupPatchModel
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+spec:
+  template:
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: amdp.skcc.com/nodegroup
+                operator: In
+                values:
+                - webide

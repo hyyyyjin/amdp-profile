@@ -1,0 +1,6 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: amdp-studio-manager
+  microservice-name: amdp-studio-manager

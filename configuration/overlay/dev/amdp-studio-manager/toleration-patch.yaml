@@ -1,0 +1,13 @@
+!!skcc.generate.model.toleration.TolerationPatchModel
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+spec:
+  template:
+    spec:
+      tolerations:
+      - effect: NoSchedule
+        key: amdp-role
+        operator: Equal
+        value: webide
