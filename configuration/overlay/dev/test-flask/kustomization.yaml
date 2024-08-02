@@ -10,7 +10,7 @@ configMapGenerator:
 images:
 - !!skcc.generate.model.kustomize.ImagePatchModel
   name: app
-  newName: amdp-registry.skamdp.org/hj-pjt-1/dev/test-flask
+  newName: amdp-registry.skamdp.org/am-studio/test-flask
   newTag: latest
 kind: Kustomization
 namePrefix: test-flask-
