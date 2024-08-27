@@ -11,7 +11,7 @@ images:
 - !!skcc.generate.model.kustomize.ImagePatchModel
   name: app
   newName: amdp-registry.skamdp.org/am-studio/manager
-  newTag: latest
+  newTag: 1.0.0.0
 kind: Kustomization
 namePrefix: amdp-studio-manager-
 nameSuffix: -dev
